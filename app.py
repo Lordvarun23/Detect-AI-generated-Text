@@ -11,7 +11,7 @@ def highlight_max(s):
 def get_probability(text):
     vectorizer_dump = pickle.load(open("vector_1000.pickel", "rb"))
     test_data_features = vectorizer_dump.transform([text])
-    loaded_model = pickle.load(open("naive_bayes_model.pkl", "rb"))
+    loaded_model = pickle.load(open("model.pkl", "rb"))
     predictions = loaded_model.predict_proba(test_data_features)
     return round(predictions[0][1],4)
 
